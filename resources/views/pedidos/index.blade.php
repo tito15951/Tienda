@@ -39,7 +39,7 @@
                                 @if($pedido->fecha_fin==$pedido->fecha_inic)
                                     <td>Sin finalizar</td>
                                 @else
-                                    <td>{{intdiv($pedido->duracion,24)}} Dias {{$pedido->duracion % 24}} Horas</td>
+                                    <td>{{intdiv($pedido->duracion, 60)}} Horas {{$pedido->duracion-intdiv($pedido->duracion, 60)*60}} Minutos</td>
                                 @endif
                                 <td>
                                     <a href="{{route('pedidos.details',$pedido->id)}}" class="btn btn-warning btn-sm">Ver detalles</a>

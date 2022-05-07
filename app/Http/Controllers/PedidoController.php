@@ -37,8 +37,8 @@ class PedidoController extends Controller
             $new_pedido->duracion=0;
             $new_pedido->estado='activo';
             $new_pedido->save();
-            return true;}
-        catch(Exception $e)
+            return true;
+        }catch(Exception $e)
         {
             return false;
         }
@@ -59,12 +59,11 @@ class PedidoController extends Controller
         $fin_almuerzo=13;
         $duracion=0;
         $fin=true;
-        $intervalo = new DateInterval("PT1H");
+        $intervalo = new DateInterval("PT1M");
         $actual=new DateTime($fecha_inic);
         $fecha_fin=new DateTime($fecha_fin);
         while($fin)
         {
-            $actual->add($intervalo);
             $ano=$actual->format('Y');
             $mes=$actual->format('m');
             $dia=$actual->format('d');
@@ -81,6 +80,7 @@ class PedidoController extends Controller
                                 {$duracion+=1;}
                             }
                 }
+            $actual->add($intervalo);
         }
         return $duracion;
     }

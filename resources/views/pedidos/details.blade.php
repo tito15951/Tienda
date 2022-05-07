@@ -43,7 +43,7 @@
                                 @if($pedido->duracion==0)
                                     <input type="text" class="form-control" name="duracion" disabled value="Sin finalizar">
                                 @else
-                                <input type="text" class="form-control" name="duracion" disabled value='{{intdiv($pedido->duracion,24)}} Dias {{$pedido->duracion % 24}} Horas'>
+                                <input type="text" class="form-control" name="duracion" disabled value='{{intdiv($pedido->duracion, 60)}} Horas {{$pedido->duracion-intdiv($pedido->duracion, 60)*60}} Minutos'>
                                 @endif
                             </div>
                             <button class="btn btn-success btn-sm" type="submit">Actualizar datos</button>

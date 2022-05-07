@@ -59,7 +59,7 @@ Route::post('pedidos',function(Request $request){//Crear un pedido
 
 Route::get('duracion',function(){
     $ControllerPedidos=new PedidoController();
-    $dur=$ControllerPedidos->CalcularDuracion('2021-12-17 13:01:00','2021-12-20 13:10:00');
+    $dur=$ControllerPedidos->CalcularDuracion('2021-12-17 13:01:01','2021-12-18 13:10:00');
     return $dur;
 })->name('duracion');
 
